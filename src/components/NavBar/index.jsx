@@ -3,7 +3,7 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div className="fixed w-full top-0 left-0 h-32">
+    <div className="fixed w-full top-0 left-0 h-32 z-[calc(500)]">
       <div className="flex justify-around h-full items-center w-full">
         <div>
           <p className="cursor-pointer">Logo</p>
@@ -12,9 +12,9 @@ const NavBar = () => {
           <p className="cursor-pointer">Inicio</p>
           <p className="cursor-pointer">Experiencia</p>
           <p className="cursor-pointer">Proyectos</p>
+          <p className="cursor-pointer">Aliados</p>
           <p className="cursor-pointer">Educacion</p>
           <p className="cursor-pointer">Contacto</p>
-          <p></p>
         </div>
         <div>
           <p className="cursor-pointer">+57 304 678 3917</p>

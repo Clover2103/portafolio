@@ -5,7 +5,7 @@ import { IoIosMail } from "react-icons/io";
 
 const Redes = () => {
   return (
-    <div className="fixed w-36 h-[calc(100vh-8rem)] top-32 left-0 flex flex-col justify-center items-center gap-6">
+    <div className="fixed w-36 h-[calc(100vh-8rem)] top-32 left-0 flex flex-col justify-center items-center gap-6 z-[calc(500)]">
       <div className="flex flex-col h-full w-full justify-around items-center">
         <div className="h-[calc(80%)] flex flex-col justify-center items-center gap-2">
           <div className="h-[calc(35%)] w-1 bg-black rounded-2xl"></div>
@@ -17,7 +17,7 @@ const Redes = () => {
           <div className="h-[calc(35%)] w-1 bg-black rounded-2xl"></div>
         </div>
         <div>
-          <p>Pie de pagina</p>
+          <p>© Clover</p>
         </div>
       </div>
     </div>

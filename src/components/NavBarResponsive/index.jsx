@@ -11,7 +11,7 @@ const NavBarResponsive = ({ showModal }) => {
   };
 
   return (
-    <div className="w-full top-0 left-0 h-32">
+    <div className="w-full top-0 left-0 h-32 z-[calc(500)]">
       <div className="flex w-full justify-between items-center h-full">
         <div className="ml-10">
           <div>
@@ -27,11 +27,17 @@ const NavBarResponsive = ({ showModal }) => {
 
       {isMenuOpen && (
         <div>
-          <p className="cursor-pointer">Inicio</p>
-          <p className="cursor-pointer">Experiencia</p>
-          <p className="cursor-pointer">Proyectos</p>
-          <p className="cursor-pointer">Educacion</p>
-          <p className="cursor-pointer">Contacto</p>
+          <div>
+            <p className="cursor-pointer">Inicio</p>
+            <p className="cursor-pointer">Experiencia</p>
+            <p className="cursor-pointer">Proyectos</p>
+            <p className="cursor-pointer">Aliados</p>
+            <p className="cursor-pointer">Educacion</p>
+            <p className="cursor-pointer">Contacto</p>
+          </div>
+          <div>
+            <p>© Clover</p>
+          </div>
         </div>
       )}
     </div>
