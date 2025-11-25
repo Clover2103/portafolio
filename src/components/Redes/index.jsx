@@ -8,15 +8,15 @@ const Redes = () => {
     <div className="fixed w-36 h-[calc(100vh-8rem)] top-32 left-0 flex flex-col justify-center items-center gap-6 z-[calc(500)]">
       <div className="flex flex-col h-full w-full justify-around items-center">
         <div className="h-[calc(80%)] flex flex-col justify-center items-center gap-2">
-          <div className="h-[calc(35%)] w-1 bg-black rounded-2xl"></div>
+          <div className="h-[calc(35%)] w-1 bg-white rounded-2xl"></div>
           <div className="gap-2 flex flex-col">
-            <IoLogoWhatsapp className="w-7 h-7 cursor-pointer"/>
-            <FaLinkedin className="w-7 h-7 cursor-pointer"/>
-            <IoIosMail className="w-7 h-7 cursor-pointer"/>
+            <IoLogoWhatsapp className="w-7 h-7 cursor-pointer text-white hover:text-verde"/>
+            <FaLinkedin className="w-7 h-7 cursor-pointer text-white"/>
+            <IoIosMail className="w-7 h-7 cursor-pointer text-white"/>
           </div>
-          <div className="h-[calc(35%)] w-1 bg-black rounded-2xl"></div>
+          <div className="h-[calc(35%)] w-1 bg-white rounded-2xl"></div>
         </div>
-        <div>
+        <div className="text-white">
           <p>© Clover</p>
         </div>
       </div>

@@ -1,0 +1,59 @@
+import React from "react";
+import img1 from "../../assets/home/allies/logo-isme.png";
+import img2 from "../../assets/home/allies/logo-spartnerg.png";
+import img3 from "../../assets/home/allies/logo-conasegur.svg";
+import img4 from "../../assets/home/allies/logo-aiexocp.png";
+import img5 from "../../assets/home/allies/logo-aiexsst.png";
+import img6 from "../../assets/home/allies/logo-clubdetiro.png";
+import img7 from "../../assets/home/allies/logo-cognoseguridad.png";
+import img8 from "../../assets/home/allies/logo-funhumac.svg";
+import img9 from "../../assets/home/allies/logo-vialseguridad.svg";
+import img10 from "../../assets/home/allies/logo-vigiempleo.svg";
+import "./SeccionAllies.css";
+
+const allies = [
+  { name: "Spartnerg", image: img2, url: import.meta.env.VITE_SPARTNERG },
+  { name: "Conasegur", image: img3, url: import.meta.env.VITE_CONASEGUR },
+  { name: "aiexocp", image: img4, url: import.meta.env.VITE_AIEXOCP },
+  { name: "aiexsst", image: img5, url: import.meta.env.VITE_AIEXSST },
+  { name: "club de tiro", image: img6, url: import.meta.env.VITE_CLUBDETIRO },
+  { name: "cognoseguridad", image: img7, url: import.meta.env.VITE_COGNOSEGURIDAD },
+  { name: "funhumac", image: img8, url: import.meta.env.VITE_FUNHUMAC },
+  { name: "vialseguridad", image: img9, url: import.meta.env.VITE_VIALSEGURIDAD },
+  { name: "vigiempleo", image: img10, url: import.meta.env.VITE_VIGIEMPLEO },
+  { name: "ISME", image: img1, url: "" }
+];
+
+const SeccionAllies = () => {
+  return (
+    <div className="w-full h-auto relative text-white bg-zinc-950" id="aliados">
+      <div className="w-full lg:w-[calc(100%-9.99rem)] lg:left-40 relative lg:absolute top-30 left-0 z-10 flex flex-col justify-start items-center py-10">
+        
+        {/* Título con spacing responsivo */}
+        <div className="mb-8 sm:mb-12 md:mb-16">
+          <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl font-bebas lineamiento">
+            Aliados
+          </h1>
+        </div>
+
+        {/* Grilla */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-16">
+          {allies.map((ally, index) => (
+            <div key={index} className="flex justify-center items-center">
+              <a href={ally.url} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={ally.image}
+                  alt={ally.name}
+                  title={ally.name}
+                  className="w-[110px] md:w-[120px] lg:w-[150px]"
+                />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { SeccionAllies };

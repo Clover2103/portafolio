@@ -6,6 +6,7 @@ import { NavBar } from '../components/NavBar';
 import { NavBarResponsive } from '../components/NavBarResponsive';
 import { Redes } from '../components/Redes';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 890);
