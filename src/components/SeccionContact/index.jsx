@@ -43,7 +43,10 @@ const SeccionContact = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 relative lg:absolute top-30 left-0 z-10 flex lg:flex-row flex-col justify-end items-center ptb-16 mtb-16">
+      <div className="absolute bg-black opacity-80 w-full h-full">
+
+      </div>
+      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 relative lg:absolute left-0 z-10 flex lg:flex-row flex-col justify-center items-center pr-20">
         <form
           onSubmit={handleSubmit}
           className="max-w-[calc(400px)] min-h-[calc(100%)] flex flex-col justify-center items-center"
@@ -89,9 +92,7 @@ const SeccionContact = () => {
             ENVIAR
           </button>
         </form>
-      </div>
-      <div className="absolute bg-black opacity-80 w-full h-full">
-
+        
       </div>
     </div>
   );

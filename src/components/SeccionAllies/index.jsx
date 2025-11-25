@@ -1,11 +1,11 @@
 import React from "react";
-import img1 from "../../assets/home/allies/logo-isme.png";
+import img1 from "../../assets/home/allies/logo-isme.svg";
 import img2 from "../../assets/home/allies/logo-spartnerg.png";
 import img3 from "../../assets/home/allies/logo-conasegur.svg";
 import img4 from "../../assets/home/allies/logo-aiexocp.png";
 import img5 from "../../assets/home/allies/logo-aiexsst.png";
 import img6 from "../../assets/home/allies/logo-clubdetiro.png";
-import img7 from "../../assets/home/allies/logo-cognoseguridad.png";
+import img7 from "../../assets/home/allies/logo-cognoseguridad.svg";
 import img8 from "../../assets/home/allies/logo-funhumac.svg";
 import img9 from "../../assets/home/allies/logo-vialseguridad.svg";
 import img10 from "../../assets/home/allies/logo-vigiempleo.svg";
@@ -37,7 +37,7 @@ const SeccionAllies = () => {
         </div>
 
         {/* Grilla */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-16 mx-5">
           {allies.map((ally, index) => (
             <div key={index} className="flex justify-center items-center">
               <a href={ally.url} className="cursor-pointer" target="_blank" rel="noopener noreferrer">

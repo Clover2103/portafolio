@@ -11,8 +11,8 @@ import cognoImg from "../../assets/home/projects/cognoseguridad.png";
 import conasegurImg from "../../assets/home/projects/conasegur.png";
 import clubImg from "../../assets/home/projects/clubdetiro.png";
 
-import imgPreview from "../../assets/home/projects/back-preview.jpg"
-import imgBack from "../../assets/home/projects/back.jpg"
+import imgPreview from "../../assets/home/projects/back-preview.jpg";
+import imgBack from "../../assets/home/projects/back.jpg";
 const projects = [
   {
     id: 1,
@@ -104,7 +104,16 @@ const SeccionProjects = () => {
       id="proyectos"
       className="w-full min-h-[110vh] relative z-30"
       ref={sectionRef}
+      style={{
+        backgroundImage: `url(${imgBack})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
+      <div 
+        className="absolute w-full h-full bg-black opacity-60 z-0"
+      ></div>
       <div className="min-h-[calc(110vh-7.5rem)] sm:min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 top-30 left-0 relative lg:absolute z-10 flex justify-start items-end ptb-16 wt-850 mtb-16">
         {showPreview ? (
           <div className="w-full h-full fixed top-0 left-0 flex items-center justify-center bg-black">
@@ -116,22 +125,17 @@ const SeccionProjects = () => {
           </div>
         ) : (
           <div
-            className="relative w-full h-full flex items-center justify-center text-white overflow-hidden z-50"
+            className="relative w-full h-full flex items-certer justify-start text-white overflow-hidden z-50"
             style={{
-              backgroundImage: `url(${imgBack})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
+              backgroundImage: `url${projects[currentIndex].image}`
             }}
           >
             {/* 🔹 Overlay */}
-            <div 
-              className="absolute inset-0 bg-black bg-opacity-60 z-0"
-            ></div>
+            
 
             {currentIndex > 0 && (
               <IoIosArrowBack
-                className="absolute top-1/2 left-4 text-5xl cursor-pointer z-20"
+                className="absolute top-30 left-4 text-5xl cursor-pointer z-20"
                 onClick={handlePrev}
               />
             )}
@@ -181,7 +185,7 @@ const SeccionProjects = () => {
 
             {currentIndex < projects.length - 1 && (
               <IoIosArrowForward
-                className="absolute top-1/2 right-4 text-5xl cursor-pointer z-20"
+                className="absolute top-30 right-4 text-5xl cursor-pointer z-20"
                 onClick={handleNext}
               />
             )}
