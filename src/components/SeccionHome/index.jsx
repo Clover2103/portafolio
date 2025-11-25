@@ -14,7 +14,7 @@ const SeccionHome = () => {
       id="inicio"
       className="w-full min-h-[110vh] relative z-10"
       style={{
-        backgroundImage: `url(${background})`,  // 👈 asegura que cargue
+        backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -27,7 +27,7 @@ const SeccionHome = () => {
           <p className="text-sm md:text-base font-roboto">Ingeniero en sistemas con {years.toFixed(0)}+ años en desarrollo full stack, enfocado en crear aplicaciones eficientes y funcionales.</p> <br />
           <p className="text-sm md:text-base font-roboto">Desde Bogotá, Colombia — ¡gracias por visitar mi portafolio!</p>
         </div>
-        <img src={image} className="relative w-[200px] sm:w-[300px] md:w-[400px] lg:w-[50%]" alt="" />
+        <img src={image} className="absolute left-1/3 top-1 w-[200px] sm:w-[300px] md:w-[400px] lg:w-[calc(50%)]" alt="" />
       </div>
     </div>
   );

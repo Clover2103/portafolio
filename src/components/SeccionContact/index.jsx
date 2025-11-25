@@ -48,8 +48,8 @@ const SeccionContact = () => {
           onSubmit={handleSubmit}
           className="max-w-[calc(400px)] min-h-[calc(100%)] flex flex-col justify-center items-center"
         >
-          <h1 className="font-bold text-4xl">CONTACTO</h1>
-          <p className="text-left text-lg min-w-[calc(280px)] mb">
+          <h1 className="font-bold text-4xl text-white">CONTACTO</h1>
+          <p className="text-left text-lg min-w-[calc(280px)] mb text-white">
             Tomémonos un café y comencemos a conversar.
           </p>
 
@@ -58,7 +58,7 @@ const SeccionContact = () => {
             name="nombre"
             value={form.nombre}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none h-[50px] min-w-[270px] sm:min-w-[300px] md:min-w-[400px] pa"
+            className="rounded-md border-b-2 mb focus:outline-none h-[calc(50px)] min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] text-white pa"
             placeholder="Nombre*"
             required
           />
@@ -68,7 +68,7 @@ const SeccionContact = () => {
             name="correo"
             value={form.correo}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none min-w-[270px] sm:min-w-[300px] md:min-w-[400px] h-[50px] pa"
+            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] h-[calc(50px)] text-white pa"
             placeholder="Correo electrónico*"
             required
           />
@@ -77,7 +77,7 @@ const SeccionContact = () => {
             name="mensaje"
             value={form.mensaje}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none min-w-[270px] sm:min-w-[300px] md:min-w-[400px] h-[150px] pa"
+            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] h-[calc(150px)] text-white pa"
             placeholder="Mensaje*"
             required
           />
@@ -89,6 +89,9 @@ const SeccionContact = () => {
             ENVIAR
           </button>
         </form>
+      </div>
+      <div className="absolute bg-black opacity-80 w-full h-full">
+
       </div>
     </div>
   );

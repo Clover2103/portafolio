@@ -28,7 +28,9 @@ function App() {
           <NavBarResponsive /> : 
           <NavBar />
       )}
-      {location.pathname !== "/" && <Redes />}
+      {location.pathname !== "/" && (
+        isMobile ? null : <Redes />
+      )}
       <Routes>
         <Route path="/" element={<Preview />} />
         <Route path="/home" element={<Home />} />

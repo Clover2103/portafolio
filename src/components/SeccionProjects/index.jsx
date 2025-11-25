@@ -116,7 +116,7 @@ const SeccionProjects = () => {
           </div>
         ) : (
           <div
-            className="relative w-full h-full flex items-center justify-center text-white overflow-hidden"
+            className="relative w-full h-full flex items-center justify-center text-white overflow-hidden z-50"
             style={{
               backgroundImage: `url(${imgBack})`,
               backgroundSize: "cover",
@@ -125,7 +125,9 @@ const SeccionProjects = () => {
             }}
           >
             {/* 🔹 Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+            <div 
+              className="absolute inset-0 bg-black bg-opacity-60 z-0"
+            ></div>
 
             {currentIndex > 0 && (
               <IoIosArrowBack
@@ -170,7 +172,7 @@ const SeccionProjects = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-4 h-4 cursor-pointer rounded-full transition-colors duration-300 ${
+                  className={`w-4 h-4 cursor-pointer rounded-4xl transition-colors duration-300 ${
                     currentIndex === index ? "bg-indigo-900" : "bg-gray-300"
                   }`}
                 />
