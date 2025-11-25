@@ -34,7 +34,7 @@ const SeccionContact = () => {
 
   return (
     <div
-      className="w-full min-h-[calc(100vh)] relative "
+      className="w-full min-h-[calc(100vh)] flex justify-center items-center relative "
       id="contacto"
       style={{
         backgroundImage: `url(${back})`,
@@ -46,7 +46,7 @@ const SeccionContact = () => {
       <div className="absolute bg-black opacity-80 w-full h-full">
 
       </div>
-      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 relative lg:absolute left-0 z-10 flex lg:flex-row flex-col justify-center items-center pr-20">
+      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 relative lg:absolute left-0 z-10 flex lg:flex-row flex-col justify-end items-center px-15">
         <form
           onSubmit={handleSubmit}
           className="max-w-[calc(400px)] min-h-[calc(100%)] flex flex-col justify-center items-center"
@@ -61,7 +61,7 @@ const SeccionContact = () => {
             name="nombre"
             value={form.nombre}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none h-[calc(50px)] min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] text-white pa"
+            className="rounded-md border-b-2 mb focus:outline-none h-[calc(50px)] min-w-[calc(100%)]  md:min-w-[calc(400px)] text-white mb-2"
             placeholder="Nombre*"
             required
           />
@@ -71,7 +71,7 @@ const SeccionContact = () => {
             name="correo"
             value={form.correo}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] h-[calc(50px)] text-white pa"
+            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(100%)] md:min-w-[calc(400px)] h-[calc(50px)] text-white mb-2"
             placeholder="Correo electrónico*"
             required
           />
@@ -80,14 +80,14 @@ const SeccionContact = () => {
             name="mensaje"
             value={form.mensaje}
             onChange={handleChange}
-            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(270px)] sm:min-w-[calc(300px)] md:min-w-[calc(400px)] h-[calc(150px)] text-white pa"
+            className="rounded-md border-b-2 mb focus:outline-none min-w-[calc(100%)] md:min-w-[calc(400px)] h-[calc(150px)] text-white mb-4"
             placeholder="Mensaje*"
             required
           />
 
           <button
             type="submit"
-            className="bg-black text-white rounded-md h-[calc(40px)] min-w-[270px] sm:min-w-[300px] md:min-w-[400px] cursor-pointer"
+            className="bg-verde text-black rounded-md h-[calc(40px)] min-w-[calc(100%)] md:min-w-[400px] cursor-pointer"
           >
             ENVIAR
           </button>
