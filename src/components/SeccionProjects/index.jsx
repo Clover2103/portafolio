@@ -111,9 +111,11 @@ const SeccionProjects = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+
       <div 
-        className="absolute w-full h-full bg-black opacity-60 z-0"
+        className="absolute w-full h-full bg-black opacity-30 z-[calc(10)]"
       ></div>
+      
       <div className="min-h-[calc(110vh-7.5rem)] sm:min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 top-30 left-0 relative lg:absolute z-10 flex justify-start items-end ptb-16 wt-850 mtb-16">
         {showPreview ? (
           <div className="w-full h-full fixed top-0 left-0 flex items-center justify-center bg-black">
@@ -125,24 +127,24 @@ const SeccionProjects = () => {
           </div>
         ) : (
           <div
-            className="relative w-full h-full flex items-certer justify-start text-white overflow-hidden z-50"
-            style={{
-              backgroundImage: `url${projects[currentIndex].image}`
-            }}
+            className="relative w-full min-h-[calc(110vh-7.5rem)] flex items-certer justify-start text-white overflow-hidden z-50"
           >
-            {/* 🔹 Overlay */}
+            <img src={projects[currentIndex].image} 
+              className="absolute left-25 sm:left-1/5 md:left-1/2 lg:left-1/4 top-0.5 sm:top-[calc(20px)] lg:top-0.5 w-[400px] sm:w-[550px] md:w-[500px] lg:w-[calc(800px)] -z-10 opacity-80 object-contain"
+              alt="" 
+            />
             
 
             {currentIndex > 0 && (
               <IoIosArrowBack
-                className="absolute top-30 left-4 text-5xl cursor-pointer z-20"
+                className="absolute top-30 left-4 text-5xl cursor-pointer z-[calc(100)] hover-text-verde"
                 onClick={handlePrev}
               />
             )}
 
             {/* Contenido */}
-            <div className="relative z-10 flex flex-col items-center justify-center gap-4 max-w-[600px] p-6 text-center">
-              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bebas">
+            <div className="relative flex flex-col items-center justify-center gap-4 max-w-[600px] p-6 text-center z-[calc(50)]">
+              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bebas <">
                 {projects[currentIndex].title}
               </h3>
               <p className="text-sm sm:text-base lg:text-lg font-roboto">
@@ -154,7 +156,7 @@ const SeccionProjects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="flex justify-center items-center cursor-pointer gap-2 w-full md:w-[150px] h-[calc(40px)] rounded-lg bg-blue-700 text-white font-roboto">
+                  <button className="flex justify-center items-center cursor-pointer gap-2 w-full md:w-[150px] h-[calc(40px)] rounded-lg bg-verde text-black font-roboto">
                     <MdWeb /> Sitio
                   </button>
                 </a>
@@ -171,13 +173,13 @@ const SeccionProjects = () => {
             </div>
 
             {/* 🔹 Bullets */}
-            <div className="flex justify-center space-x-3 absolute bottom-5 z-20">
+            <div className="flex justify-center space-x-3 absolute bottom-15 left-1/2 z-50 gap-2 transform -translate-x-1/2">
               {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-4 h-4 cursor-pointer rounded-4xl transition-colors duration-300 ${
-                    currentIndex === index ? "bg-indigo-900" : "bg-gray-300"
+                  className={`w-2 h-2 cursor-pointer rounded transition-colors duration-300 ${
+                    currentIndex === index ? "bg-verde" : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -185,7 +187,7 @@ const SeccionProjects = () => {
 
             {currentIndex < projects.length - 1 && (
               <IoIosArrowForward
-                className="absolute top-30 right-4 text-5xl cursor-pointer z-20"
+                className="absolute top-30 right-4 text-5xl cursor-pointer z-[calc(100)] hover-text-verde"
                 onClick={handleNext}
               />
             )}

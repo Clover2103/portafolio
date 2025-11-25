@@ -15,3 +15,15 @@
 .text-verde {
   color: #00ff00;
 }
+
+.hover-bg-verde:hover {
+  background-color: #00ff00;
+}
+
+.hover-text-verde:hover {
+  color: #00ff00;
+}
+
+.hover-text-verde {
+  color: white
+}

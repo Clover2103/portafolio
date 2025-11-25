@@ -10,9 +10,9 @@ const Redes = () => {
         <div className="h-[calc(80%)] flex flex-col justify-center items-center gap-2">
           <div className="h-[calc(35%)] w-1 bg-white rounded-2xl"></div>
           <div className="gap-2 flex flex-col">
-            <IoLogoWhatsapp className="w-7 h-7 cursor-pointer text-white hover:text-verde"/>
-            <FaLinkedin className="w-7 h-7 cursor-pointer text-white"/>
-            <IoIosMail className="w-7 h-7 cursor-pointer text-white"/>
+            <IoLogoWhatsapp className="w-7 h-7 cursor-pointer  hover:text-verde hover-text-verde"/>
+            <FaLinkedin className="w-7 h-7 cursor-pointer hover-text-verde"/>
+            <IoIosMail className="w-7 h-7 cursor-pointer hover-text-verde"/>
           </div>
           <div className="h-[calc(35%)] w-1 bg-white rounded-2xl"></div>
         </div>
