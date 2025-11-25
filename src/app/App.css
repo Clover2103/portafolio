@@ -7,3 +7,11 @@
 .font-roboto {
   font-family: "roboto", sans-serif;
 }
+
+.bg-verde {
+  background-color: #00ff00;
+}
+
+.text-verde {
+  color: #00ff00;
+}

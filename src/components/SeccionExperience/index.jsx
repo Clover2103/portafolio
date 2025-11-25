@@ -165,21 +165,21 @@ const SeccionExperience = ({ showModal }) => {
       }, []);
 
       return (
-        <div ref={modalRef} className="flex flex-col justify-center items-center p-6">
-          <h1 className="font-bold text-2xl mb-6 text-center">Habilidades en {skill.name}</h1>
+        <div ref={modalRef} className="flex flex-col justify-center items-center p-6 text-white">
+          <h2 className="font-bold text-2xl mb-3 text-center">Habilidades en {skill.name}</h2>
 
-          <div className="grid grid-cols-2 gap-4 w-[80%]">
+          <div className="grid grid-cols-2 gap-4 w-[90%]">
             {skill.images.map((image, idx) => {
               const progress = useProgress(image.porcent, animateModal, 900);
               return (
                 <div key={idx} className="flex flex-col items-center">
-                  <img src={image.img} alt={image.name} title={image.name} className="w-18 h-18 object-contain mb-2" />
-                  <div className="flex justify-between w-full text-sm font-medium mb-1">
-                    <h3>{image.name}</h3>
-                    <p>{progress}%</p>
+                  <img src={image.img} alt={image.name} title={image.name} className="w-18 h-18 object-contain" />
+                  <div className="flex justify-between w-full text-sm font-medium ">
+                    <p className="text-md">{image.name}</p>
+                    <p className="text-md text-verde">{progress}%</p>
                   </div>
                   <div className="w-full h-2 bg-zinc-200 rounded-md overflow-hidden">
-                    <div className="bg-blue-900 h-2" style={{ width: `${progress}%` }} />
+                    <div className="bg-verde h-2 rounded-2xl" style={{ width: `${progress}%` }} />
                   </div>
                 </div>
               );
@@ -194,12 +194,11 @@ const SeccionExperience = ({ showModal }) => {
   };
 
   return (
-    <div ref={sectionRef} className="w-full min-h-[110vh] relative z-20">
-      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-full lg:left-40 relative lg:absolute top-30 left-0 z-10 flex lg:flex-row flex-col justify-center items-center py-16">
-        {/* Left */}
-        <div className="w-[50%] flex justify-center items-center text-white">
+    <div ref={sectionRef} className="w-full min-h-[110vh] relative z-20 bg-zinc-900 ">
+      <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-full lg:left-40 relative lg:absolute top-30 left-0 z-10 flex lg:flex-row flex-col justify-center items-center py-16 bg-zinc-900 gap-3">
+        <div className="w-full md:w-[50%] flex justify-center items-center text-white">
           <div className="flex flex-col justify-center items-center w-[400px] min-h-[450px] border-b-2 border-l-2 border-t-2">
-            <h1 className="font-bold text-9xl text-center">{Math.floor(years)}</h1>
+            <p className="font-bold text-9xl text-center font-bebas">{Math.floor(years)}<span className="text-verde">.</span> </p>
             <div className="flex justify-center items-center w-full min-h-[200px]">
               <div className="w-2/5 h-[100px] border-b-2"></div>
               <div className="w-1/2 h-[100px]">
@@ -209,26 +208,24 @@ const SeccionExperience = ({ showModal }) => {
           </div>
         </div>
 
-        {/* Right: skills */}
-        <div className="w-[50%] flex justify-center items-center mt-8 lg:mt-0 text-white">
+        <div className="w-full md:w-[50%] flex justify-center items-center mt-8 lg:mt-0 text-white p-3">
           <div className="flex flex-col justify-around items-center w-[400px] min-h-[450px]">
             <h2 className="font-bold text-3xl w-full">Gran experiencia</h2>
-            <p className="text-justify max-w-[60ch] text-sm my-6">
+            <p className="text-justify max-w-[60ch] text-md my-2">
               Cada línea de código es una oportunidad para crear soluciones.
             </p>
-
             {skills.map((skill, i) => {
               const progress = useProgress(skill.progress, animateBars, 1000);
               return (
-                <div key={i} className="w-full my-1">
-                  <div className="flex justify-between w-full font-medium text-lg mb-1">
-                    <h3>{skill.name}</h3>
-                    <p>{progress}%</p>
+                <div key={i} className="w-full mb-2">
+                  <div className="flex justify-between w-full font-medium text-lg outline-0">
+                    <h5>{skill.name}</h5>
+                    <p className="text-verde">{progress}%</p>
                   </div>
                   <div className="w-full h-2 bg-zinc-200 rounded-md overflow-hidden mb-2">
-                    <div className="bg-blue-900 h-2" style={{ width: `${progress}%` }} />
+                    <div className="bg-verde h-2 rounded-4xl" style={{ width: `${progress}%` }} />
                   </div>
-                  <button className="flex items-center gap-2 text-blue-700 hover:font-medium" onClick={() => handleButtonClick(skill)}>
+                  <button className="flex items-center gap-2 text-verde hover:font-medium" onClick={() => handleButtonClick(skill)}>
                     Ver habilidades <FaLongArrowAltRight />
                   </button>
                 </div>

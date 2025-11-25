@@ -12,7 +12,7 @@ const SeccionHome = () => {
   return (
     <div
       id="inicio"
-      className="w-full min-h-[110vh] relative z-10"
+      className="w-full min-h-[110vh] relative z-10 overflow-hidden"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -21,7 +21,7 @@ const SeccionHome = () => {
       }}
     >
       <div className="min-h-[calc(110vh-7.5rem)] sm:min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 top-30 left-0 relative lg:absolute z-10 flex justify-start items-end ptb-16 wt-850 mtb-16">
-        <div className="max-w-[100%] sm:max-w-[480px] text-justify hyphens-auto text-white p-5 sm:pl-12 z-50">
+        <div className="max-w-full sm:max-w-[480px] text-justify hyphens-auto text-white p-5 sm:pl-12 z-50">
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-medium font-bebas mp-0">Cristian.</h1>
           <h3 className="text-base sm:text-[20px] md:text-2xl font-bold font-roboto mp-1">Desarrollador Full Stack</h3> <br />
           <p className="text-sm md:text-base font-roboto">Ingeniero en sistemas con {years.toFixed(0)}+ años en desarrollo full stack, enfocado en crear aplicaciones eficientes y funcionales.</p> <br />
