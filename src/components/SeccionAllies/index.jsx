@@ -26,13 +26,13 @@ const allies = [
 
 const SeccionAllies = () => {
   return (
-    <div className="w-full h-auto relative text-white bg-zinc-950" id="aliados">
-      <div className="w-full lg:w-[calc(100%-9.99rem)] lg:left-40 relative lg:absolute top-30 left-0 z-10 flex flex-col justify-start items-center py-10">
+    <div className="w-full h-full relative text-white bg-zinc-900" id="aliados">
+      <div className="w-full lg:w-[calc(100%-9.99rem)] lg:left-40 relative lg:absolute top-30 left-0 z-10 flex flex-col justify-start items-center py-10 bg-zinc-900">
         
         {/* Título con spacing responsivo */}
         <div className="mb-8 sm:mb-12 md:mb-16">
           <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl font-bebas lineamiento">
-            Aliados
+            Empresas con las que he trabajado
           </h1>
         </div>
 
@@ -45,7 +45,7 @@ const SeccionAllies = () => {
                   src={ally.image}
                   alt={ally.name}
                   title={ally.name}
-                  className="w-[110px] md:w-[120px] lg:w-[150px]"
+                  className="w-[110px] md:w-[120px] lg:w-[150px] opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               </a>
             </div>
