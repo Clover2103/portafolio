@@ -11,7 +11,7 @@ const NavBarResponsive = ({ showModal }) => {
   };
 
   return (
-    <div className="w-full top-0 left-0 h-32 z-[calc(500)]">
+    <div className="fixed w-full top-0 left-0 h-32 z-[calc(500)]">
       <div className="flex w-full justify-between items-center h-full">
         <div className="ml-10">
           <div className="text-white">
