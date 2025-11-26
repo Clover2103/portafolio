@@ -34,14 +34,14 @@ const NavbarResponsive = () => {
 
   return (
     <div className="w-full h-30 fixed top-0 left-0 z-[calc(100)] text-white">
-      <div className="h-full flex justify-between items-center px-16">
+      <div className="h-full flex justify-between items-center px-16 bg-zinc-op">
         <h1 className="logo_mr">Logo</h1>
         <IoMenu className="w-10 h-10 cursor-pointer icon_mr" onClick={toggleMenu} />
       </div>
 
       {isMenuOpen && (
-        <div className="w-full flex justify-end pr-4">
-          <div className="w-full md:w-[calc(450px)] h-[calc(100vh-120px)] flex flex-col justify-between items-center bg-zinc-900 z-[calc(100)]">
+        <div className="w-full flex justify-end ">
+          <div className="w-full md:w-[calc(450px)] h-[calc(100vh-120px)] flex flex-col justify-between items-center bg-zinc-op z-[calc(100)]">
             <div className="flex flex-col w-full">
               {sections.map(({ label, index }) => (
                 <button
