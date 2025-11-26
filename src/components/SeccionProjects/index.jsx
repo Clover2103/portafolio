@@ -113,7 +113,7 @@ const SeccionProjects = () => {
     >
 
       <div 
-        className="absolute w-full h-full bg-black opacity-30 z-[calc(10)]"
+        className="absolute w-full min-h-[calc(100%)] bg-black opacity-30 z-[calc(10)]"
       ></div>
       
       <div className="min-h-[calc(110vh-7.5rem)] sm:min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-[calc(100%)] lg:left-40 top-30 left-0 relative lg:absolute z-10 flex justify-start items-end ptb-16 wt-850 mtb-16">

@@ -225,7 +225,7 @@ const SeccionExperience = ({ showModal }) => {
                   <div className="w-full h-2 bg-zinc-200 rounded-md overflow-hidden mb-2">
                     <div className="bg-verde h-2 rounded-4xl" style={{ width: `${progress}%` }} />
                   </div>
-                  <button className="flex items-center gap-2 text-verde hover:font-medium" onClick={() => handleButtonClick(skill)}>
+                  <button className="flex items-center gap-2 cursor-pointer text-verde hover:font-medium" onClick={() => handleButtonClick(skill)}>
                     Ver habilidades <FaLongArrowAltRight />
                   </button>
                 </div>

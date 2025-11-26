@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { useNavigation } from "../../context/NavigationContext";
+import logoNav from "../../assets/home/logo-clover.png"
 
 const linkWhatsapp = import.meta.env.VITE_WHATSAPP;
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="w-[calc(100vw)] h-[calc(110px)] fixed left-0 top-0 flex justify-around items-center font-semibold z-[calc(100)] text-white">
       <div className="flex justify-center items-center">
-        <h3>Logo</h3>
+        <img src={logoNav} alt="Logo" className="w-[calc(180px)]" />
       </div>
 
       <div>

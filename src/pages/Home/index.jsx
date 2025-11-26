@@ -59,7 +59,7 @@ export const Home = ({ showModal }) => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-black">
+    <div className="relative w-screen h-screen overflow-hidden bg-zinc-900">
       {sections.map(({ id, Component }, index) => (
         <div key={id} className={`absolute inset-0 transition-all duration-800 ease-in-out ${getTransform(index)} ${index === activeSection ? "z-20" : "z-10"}`}>
           <div ref={(el) => (scrollerRefs.current[index] = el)} className="h-full overflow-y-auto">

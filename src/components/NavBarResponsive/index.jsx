@@ -1,26 +1,32 @@
-import React, { useState } from "react";
-import { LiaLinkedinIn } from "react-icons/lia";
-import { CgMail } from "react-icons/cg";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
+import React, { useState, useRef, useEffect } from "react";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaLinkedin } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 import { useNavigation } from "../../context/NavigationContext";
-const linkWhatsapp = import.meta.env.VITE_WHATSAPP;
-const linkGmail = import.meta.env.VITE_GMAIL;
-const linkLinkedin = import.meta.env.VITE_LINKEDIN;
-import "./NavbarResponsive.css";
+import logoNav from "../../assets/home/logo-clover.png";
 
 const NavbarResponsive = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeSection, goTo } = useNavigation();
+  const menuRef = useRef(null);
 
-  const toggleMenu = () => setIsMenuOpen(v => !v);
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  /* Cerrar al hacer clic fuera */
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    if (isMenuOpen) document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen]);
 
   const handleClick = (index) => {
-    // 1) Actualiza la sección activa globalmente
     goTo(index);
-    // 2) Cierra el menú
     setIsMenuOpen(false);
-    // opcional: forzar focus/scroll o analytics aquí
   };
 
   const sections = [
@@ -33,38 +39,89 @@ const NavbarResponsive = () => {
   ];
 
   return (
-    <div className="w-full h-30 fixed top-0 left-0 z-[calc(100)] text-white">
-      <div className="h-full flex justify-between items-center px-16 bg-zinc-op">
-        <h1 className="logo_mr">Logo</h1>
-        <IoMenu className="w-10 h-10 cursor-pointer icon_mr" onClick={toggleMenu} />
+    <div className="w-full h-30 fixed top-0 left-0 z-[500] text-white">
+      {/* NAV SUPERIOR */}
+      <div className="h-full flex justify-between items-center px-8 bg-zinc-op">
+
+        {/* LOGO */}
+        <img src={logoNav} alt="Logo" className="w-[180px]" />
+
+        {/* BOTÓN HAMBURGUESA ANIMADO */}
+        <div
+          onClick={toggleMenu}
+          className="relative w-10 h-10 flex flex-col justify-center items-center cursor-pointer"
+        >
+          <span
+            className={`block w-8 h-1 bg-white rounded transition-all duration-300 
+              ${isMenuOpen ? "rotate-45 translate-y-2" : ""}
+            `}
+          />
+          <span
+            className={`block w-8 h-1 bg-white rounded transition-all duration-300 my-1
+              ${isMenuOpen ? "opacity-0" : "opacity-100"}
+            `}
+          />
+          <span
+            className={`block w-8 h-1 bg-white rounded transition-all duration-300
+              ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}
+            `}
+          />
+        </div>
       </div>
 
+      {/* OVERLAY OSCURO CLICK-FUERA */}
       {isMenuOpen && (
-        <div className="w-full flex justify-end ">
-          <div className="w-full md:w-[calc(450px)] h-[calc(100vh-120px)] flex flex-col justify-between items-center bg-zinc-op z-[calc(100)]">
-            <div className="flex flex-col w-full">
-              {sections.map(({ label, index }) => (
-                <button
-                  key={index}
-                  className={`cursor-pointer h-[60px] text-center flex items-center justify-center hover:bg-black hover:text-white ${
-                    activeSection === index ? "bg-verde text-black" : ""
-                  }`}
-                  onClick={() => handleClick(index)}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
+        <div className="fixed inset-0 bg-black/40 z-[400]"></div>
+      )}
 
-            <div className="pb-4">
-              <p>© Clover 2025</p>
+      {/* MENU DESLIZANTE */}
+      <div
+        ref={menuRef}
+        className={`
+          fixed top-0 right-0 h-full w-[75%] max-w-[350px]
+          bg-zinc-900 text-white z-[500]
+          shadow-xl transition-transform duration-300
+          overflow-y-auto
+          ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
+        `}
+      >
+        <div className="flex flex-col justify-between h-full py-8">
+
+          {/* SECCIONES */}
+          <div className="flex flex-col w-full">
+            {sections.map(({ label, index }) => (
+              <button
+                key={index}
+                className={`
+                  cursor-pointer h-[60px] text-center flex items-center justify-center font-bebass text-2xl
+                  ${
+                    activeSection === index
+                      ? "bg-verde text-black font-bold"
+                      : "hover-text-verde-nav"
+                  }
+                `}
+                onClick={() => handleClick(index)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {/* REDES */}
+          <div className="pb-4 flex flex-col items-center justify-center w-full">
+            <div className="flex gap-3 mb-3">
+              <IoLogoWhatsapp className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
+              <FaLinkedin className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
+              <IoIosMail className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
             </div>
+            <p className="font-roboto text-sm opacity-80">© Clover 2025</p>
           </div>
 
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 export { NavbarResponsive };
+
