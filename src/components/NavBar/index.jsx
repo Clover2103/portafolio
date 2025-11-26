@@ -1,27 +1,47 @@
 import React from "react";
-import "./NavBar.css";
+import "./Navbar.css";
+import { useNavigation } from "../../context/NavigationContext";
 
-const NavBar = () => {
+const linkWhatsapp = import.meta.env.VITE_WHATSAPP;
+
+const Navbar = () => {
+  const { activeSection, goTo } = useNavigation();
+
+  const sections = [
+    { label: "INICIO", index: 0 },
+    { label: "EXPERIENCIA", index: 1 },
+    { label: "PROYECTOS", index: 2 },
+    { label: "EDUCACION", index: 3 },
+    { label: "ALIADOS", index: 4 },
+    { label: "CONTACTO", index: 5 },
+  ];
+
   return (
-    <div className="fixed w-full top-0 left-0 h-32 z-[calc(500)]">
-      <div className="flex justify-around h-full items-center w-full">
-        <div>
-          <p className="cursor-pointer text-white">Logo</p>
-        </div>
-        <div className="flex gap-8 ">
-          <p className="cursor-pointer hover-text-verde">Inicio</p>
-          <p className="cursor-pointer hover-text-verde">Experiencia</p>
-          <p className="cursor-pointer hover-text-verde">Proyectos</p>
-          <p className="cursor-pointer hover-text-verde">Educacion</p>
-          <p className="cursor-pointer hover-text-verde">Aliados</p>
-          <p className="cursor-pointer hover-text-verde">Contacto</p>
-        </div>
-        <div>
-          <p className="cursor-pointer hover-text-verde">+57 304 678 3917</p>
-        </div>
+    <div className="w-[calc(100vw)] h-[calc(110px)] fixed left-0 top-0 flex justify-around items-center font-semibold z-[calc(100)] text-white">
+      <div className="flex justify-center items-center">
+        <h3>Logo</h3>
+      </div>
+
+      <div>
+        <ul className="flex gap-6">
+          {sections.map(({label,index}) => (
+            <li key={index}>
+              <button
+                className={`hover-text-verde-nav cursor-pointer ${activeSection === index ? "text-verde" : ""}`}
+                onClick={() => goTo(index)}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <a href={linkWhatsapp} className="hover-text-verde-nav cursor-pointer" target="_blank" rel="noreferrer"><p>+57 3046783917</p></a>
       </div>
     </div>
   );
 };
 
-export { NavBar };
+export { Navbar };

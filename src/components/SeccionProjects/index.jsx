@@ -102,7 +102,7 @@ const SeccionProjects = () => {
   return (
     <div
       id="proyectos"
-      className="w-full min-h-[110vh] relative z-30"
+      className="w-full min-h-[850px] relative z-30"
       ref={sectionRef}
       style={{
         backgroundImage: `url(${imgBack})`,
@@ -130,7 +130,7 @@ const SeccionProjects = () => {
             className="relative w-full min-h-[calc(110vh-7.5rem)] flex items-certer justify-start text-white overflow-hidden z-50"
           >
             <img src={projects[currentIndex].image} 
-              className="absolute left-25 sm:left-1/5 md:left-1/2 lg:left-1/4 top-0.5 sm:top-[calc(20px)] lg:top-0.5 w-[400px] sm:w-[550px] md:w-[500px] lg:w-[calc(800px)] -z-10 opacity-80 object-contain"
+              className="absolute left-0 sm:left-0 md:left-25 lg:left-1/4 top-0.5 sm:top-[calc(20px)] md:top-[calc(0px)] lg:top-0.5 w-[500px] sm:w-[550px] md:w-[700px] lg:w-[calc(800px)] -z-10 opacity-80 object-contain"
               alt="" 
             />
             
@@ -143,14 +143,14 @@ const SeccionProjects = () => {
             )}
 
             {/* Contenido */}
-            <div className="relative flex flex-col items-center justify-center gap-4 max-w-[600px] p-6 text-center z-[calc(50)]">
-              <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bebas <">
+            <div className="relative flex flex-col items-start justify-end lg:justify-center gap-4 max-w-[600px] p-6 text-justify z-[calc(50)]">
+              <p className="text-4xl sm:text-5xl lg:text-6xl font-bebas text-start">
                 {projects[currentIndex].title}
-              </h3>
+              </p>
               <p className="text-sm sm:text-base lg:text-lg font-roboto">
                 {projects[currentIndex].description}
               </p>
-              <div className="flex flex-col md:flex-row gap-3 justify-center w-full">
+              <div className="flex flex-col md:flex-row gap-3 justify-start w-full">
                 <a
                   href={projects[currentIndex].site}
                   target="_blank"
@@ -173,7 +173,7 @@ const SeccionProjects = () => {
             </div>
 
             {/* 🔹 Bullets */}
-            <div className="flex justify-center space-x-3 absolute bottom-15 left-1/2 z-50 gap-2 transform -translate-x-1/2">
+            <div className="flex justify-center space-x-3 absolute bottom-0 left-1/2 z-50 gap-2 transform -translate-x-1/2">
               {projects.map((_, index) => (
                 <button
                   key={index}

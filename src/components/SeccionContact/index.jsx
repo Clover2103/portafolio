@@ -34,7 +34,7 @@ const SeccionContact = () => {
 
   return (
     <div
-      className="w-full min-h-[calc(100vh)] flex justify-center items-center relative "
+      className="w-full h-full min-h-[700px] flex justify-center items-center relative "
       id="contacto"
       style={{
         backgroundImage: `url(${back})`,
@@ -51,7 +51,7 @@ const SeccionContact = () => {
           onSubmit={handleSubmit}
           className="max-w-[calc(400px)] min-h-[calc(100%)] flex flex-col justify-center items-center"
         >
-          <h1 className="font-bold text-4xl text-white">CONTACTO</h1>
+          <h1 className="font-bold text-4xl text-verde">CONTACTO</h1>
           <p className="text-left text-lg min-w-[calc(280px)] mb text-white">
             Tomémonos un café y comencemos a conversar.
           </p>

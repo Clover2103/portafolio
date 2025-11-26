@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { Preview } from '../pages/Preview';
+import { useState, useEffect } from "react";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { NavBar } from '../components/NavBar';
-import { NavBarResponsive } from '../components/NavBarResponsive';
-import { Redes } from '../components/Redes';
-import { Modal } from '../components/Modal';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import { Preview } from "../pages/Preview";
+import { Navbar } from "../components/NavBar";
+import { NavbarResponsive } from "../components/NavBarResponsive";
+import { Modal } from "../components/Modal";
+import { Redes } from "../components/Redes";
+import { NavigationProvider } from "../context/NavigationContext";
+import "./App.css";
 
-function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+function AppContent() {
   const location = useLocation();
-
+  const [isMobile, setIsMobile] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const showModal = (content) => {
@@ -36,30 +33,27 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="relative">
       {location.pathname !== "/" && (
-        isMobile ? 
-          <NavBarResponsive /> : 
-          <NavBar />
+        isMobile ? <NavbarResponsive /> : (<><Redes /><Navbar /></>)
       )}
-      {location.pathname !== "/" && (
-        isMobile ? null : <Redes />
-      )}
+
       <Routes>
         <Route path="/" element={<Preview />} />
-        <Route path="/home" element={<Home showModal={showModal}/>} />
+        <Route path="/home" element={<Home showModal={showModal} />} />
       </Routes>
+
       <Modal isVisible={isModalVisible} hideModal={hideModal} content={modalContent} />
     </div>
   );
 }
 
-function AppWithRouter() {
+export function App() {
   return (
     <HashRouter>
-      <App />
+      <NavigationProvider>
+        <AppContent />
+      </NavigationProvider>
     </HashRouter>
   );
 }
-
-export { AppWithRouter as App };

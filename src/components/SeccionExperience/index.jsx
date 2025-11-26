@@ -194,7 +194,7 @@ const SeccionExperience = ({ showModal }) => {
   };
 
   return (
-    <div ref={sectionRef} className="w-full min-h-[110vh] relative z-20 bg-zinc-900 ">
+    <div ref={sectionRef} className="w-full min-h-[800px] relative z-20 bg-zinc-900 " id="experience">
       <div className="min-h-[calc(100vh-7.5rem)] lg:w-[calc(100%-9.99rem)] w-full lg:left-40 relative lg:absolute top-30 left-0 z-10 flex lg:flex-row flex-col justify-center items-center py-16 bg-zinc-900 gap-3">
         <div className="w-full md:w-[50%] flex justify-center items-center text-white">
           <div className="flex flex-col justify-center items-center w-[400px] min-h-[450px] border-b-2 border-l-2 border-t-2">
@@ -202,7 +202,7 @@ const SeccionExperience = ({ showModal }) => {
             <div className="flex justify-center items-center w-full min-h-[200px]">
               <div className="w-2/5 h-[100px] border-b-2"></div>
               <div className="w-1/2 h-[100px]">
-                <h2 className="text-center text-2xl">Años de experiencia</h2>
+                <p className="text-center text-3xl">Años de experiencia</p>
               </div>
             </div>
           </div>

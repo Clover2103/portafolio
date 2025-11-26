@@ -31,9 +31,9 @@ const SeccionAllies = () => {
         
         {/* Título con spacing responsivo */}
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl font-bebas lineamiento">
+          <p className="font-bold text-3xl sm:text-4xl md:text-5xl font-bebas px-4 text-center">
             Empresas con las que he trabajado
-          </h1>
+          </p>
         </div>
 
         {/* Grilla */}
