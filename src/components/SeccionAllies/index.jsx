@@ -9,19 +9,20 @@ import img7 from "../../assets/home/allies/logo-cognoseguridad.svg";
 import img8 from "../../assets/home/allies/logo-funhumac.svg";
 import img9 from "../../assets/home/allies/logo-vialseguridad.svg";
 import img10 from "../../assets/home/allies/logo-vigiempleo.svg";
+import { WEB_PAGES } from "../../config/links";
 import "./SeccionAllies.css";
 
 const allies = [
-  { name: "Spartnerg", image: img2, url: import.meta.env.VITE_SPARTNERG },
-  { name: "Conasegur", image: img3, url: import.meta.env.VITE_CONASEGUR },
-  { name: "aiexocp", image: img4, url: import.meta.env.VITE_AIEXOCP },
-  { name: "aiexsst", image: img5, url: import.meta.env.VITE_AIEXSST },
-  { name: "club de tiro", image: img6, url: import.meta.env.VITE_CLUBDETIRO },
-  { name: "cognoseguridad", image: img7, url: import.meta.env.VITE_COGNOSEGURIDAD },
-  { name: "funhumac", image: img8, url: import.meta.env.VITE_FUNHUMAC },
-  { name: "vialseguridad", image: img9, url: import.meta.env.VITE_VIALSEGURIDAD },
-  { name: "vigiempleo", image: img10, url: import.meta.env.VITE_VIGIEMPLEO },
-  { name: "ISME", image: img1, url: "" }
+  { name: "Spartnerg", image: img2, url: WEB_PAGES.spg },
+  { name: "Conasegur", image: img3, url: WEB_PAGES.conasegur },
+  { name: "aiexocp", image: img4, url: WEB_PAGES.aiexocp },
+  { name: "aiexsst", image: img5, url: WEB_PAGES.aiexsst },
+  { name: "club de tiro", image: img6, url: WEB_PAGES.clubdetiro },
+  { name: "cognoseguridad", image: img7, url: WEB_PAGES.cognoseguridad },
+  { name: "funhumac", image: img8, url: WEB_PAGES.funhumac },
+  { name: "vialseguridad", image: img9, url: WEB_PAGES.vialseguridad },
+  { name: "vigiempleo", image: img10, url: WEB_PAGES.vigiempleo },
+  { name: "ISME", image: img1, url: WEB_PAGES.isme }
 ];
 
 const SeccionAllies = () => {
@@ -45,7 +46,7 @@ const SeccionAllies = () => {
                   src={ally.image}
                   alt={ally.name}
                   title={ally.name}
-                  className="w-[110px] md:w-[120px] lg:w-[150px] opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="w-[250px] md:w-[180px] lg:w-[150px] opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               </a>
             </div>

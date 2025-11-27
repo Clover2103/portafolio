@@ -3,6 +3,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { useNavigation } from "../../context/NavigationContext";
+import { WHATSAPP_LINK, EMAIL_LINK, LINKEDIN_LINK } from "../../config/links";
 import logoNav from "../../assets/home/logo-clover.png";
 
 const NavbarResponsive = () => {
@@ -39,7 +40,7 @@ const NavbarResponsive = () => {
   ];
 
   return (
-    <div className="w-full h-30 fixed top-0 left-0 z-[500] text-white">
+    <div className="w-full h-30 fixed top-0 left-0 z-[calc(500)] text-white">
       {/* NAV SUPERIOR */}
       <div className="h-full flex justify-between items-center px-8 bg-zinc-op">
 
@@ -71,7 +72,7 @@ const NavbarResponsive = () => {
 
       {/* OVERLAY OSCURO CLICK-FUERA */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black/40 z-[400]"></div>
+        <div className="fixed inset-0 bg-black/40 z-[calc(400)]"></div>
       )}
 
       {/* MENU DESLIZANTE */}
@@ -79,7 +80,7 @@ const NavbarResponsive = () => {
         ref={menuRef}
         className={`
           fixed top-0 right-0 h-full w-[75%] max-w-[350px]
-          bg-zinc-900 text-white z-[500]
+          bg-zinc-900 text-white z-[calc(500)]
           shadow-xl transition-transform duration-300
           overflow-y-auto
           ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
@@ -110,9 +111,9 @@ const NavbarResponsive = () => {
           {/* REDES */}
           <div className="pb-4 flex flex-col items-center justify-center w-full">
             <div className="flex gap-3 mb-3">
-              <IoLogoWhatsapp className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
-              <FaLinkedin className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
-              <IoIosMail className="w-7 h-7 cursor-pointer hover-text-verde-nav" />
+              <IoLogoWhatsapp className="w-7 h-7 cursor-pointer hover-text-verde-nav" onClick={() => window.open(WHATSAPP_LINK, "_blank")} />
+              <FaLinkedin className="w-7 h-7 cursor-pointer hover-text-verde-nav" onClick={() => window.open(LINKEDIN_LINK, "_blank")} />
+              <IoIosMail className="w-7 h-7 cursor-pointer hover-text-verde-nav" onClick={() => window.open(EMAIL_LINK, "_blank")} />
             </div>
             <p className="font-roboto text-sm opacity-80">© Clover 2025</p>
           </div>

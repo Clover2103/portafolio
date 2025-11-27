@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { useNavigation } from "../../context/NavigationContext";
+import { WHATSAPP_LINK } from "../../config/links"
 import logoNav from "../../assets/home/logo-clover.png"
 
 const linkWhatsapp = import.meta.env.VITE_WHATSAPP;
@@ -39,7 +40,7 @@ const Navbar = () => {
       </div>
 
       <div>
-        <a href={linkWhatsapp} className="hover-text-verde-nav cursor-pointer" target="_blank" rel="noreferrer"><p>+57 3046783917</p></a>
+        <a onClick={() => window.open(WHATSAPP_LINK, "_blank")} className="hover-text-verde-nav cursor-pointer" rel="noreferrer"><p>+57 3046783917</p></a>
       </div>
     </div>
   );

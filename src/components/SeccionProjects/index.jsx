@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
+import { GITHUB_REPOS, WEB_PAGES } from "../../config/links";
 import "./SeccionProjects.css";
 
 // 🔹 Importar imágenes (debes tenerlas en /src/assets/projects/)
@@ -19,41 +20,41 @@ const projects = [
     title: "VIGIEMPLEO.COM",
     description: "Plataforma web desarrollada para el sector de vigilancia y seguridad privada, que conecta a profesionales con oportunidades laborales y a las empresas con el talento que necesitan. Implementada con HTML, CSS, JavaScript y PHP.",
     image: vigiempleoImg,
-    github: "https://github.com/Clover2103/vigiempleo",
-    site: import.meta.env.VITE_VIGIEMPLEO,
+    github: GITHUB_REPOS.vigiempleo,
+    site: WEB_PAGES.vigiempleo,
   },
   {
     id: 2,
     title: "AIEX.COM.CO",
     description: "Sistema web que respalda la gestión de certificación de personas bajo la norma ISO/IEC 17024:2012. Digitaliza procesos de evaluación y asegura confiabilidad en la verificación de competencias.",
     image: aiexImg,
-    github: "https://github.com/Clover2103/AIEX-OCP",
-    site: import.meta.env.VITE_AIEXOCP,
+    github: GITHUB_REPOS.aiexocp,
+    site: WEB_PAGES.aiexocp,
   },
   {
     id: 3,
     title: "COGNOSEGURIDAD",
     description: "Sitio web creado para una academia con más de 20 años de experiencia en capacitación en vigilancia y seguridad privada. Interfaz clara y funcional con frontend en React y backend en PHP.",
     image: cognoImg,
-    github: "https://github.com/Clover2103/cognoseguridad",
-    site: import.meta.env.VITE_COGNOSEGURIDAD,
+    github: GITHUB_REPOS.cognoseguridad,
+    site: WEB_PAGES.cognoseguridad,
   },
   {
     id: 4,
     title: "CONASEGUR FES 4.0",
     description: "Portal institucional para la Corporación Nacional de Empresas de Seguridad Privada. Incluye un diseño moderno y adaptable con React y PHP para mejorar la experiencia de usuario.",
     image: conasegurImg,
-    github: "https://github.com/Clover2103/conasegur",
-    site: import.meta.env.VITE_CONASEGUR,
+    github: GITHUB_REPOS.conasegur,
+    site: WEB_PAGES.conasegur,
   },
-  {
-    id: 5,
-    title: "CLUB DE TIRO CONASEGUR",
-    description: "Página web enfocada en la difusión de la cultura y capacitación en manejo seguro de armas y actividades recreativas. Diseño atractivo y escalable.",
-    image: clubImg,
-    github: "https://github.com/Clover2103/conasegur",
-    site: import.meta.env.VITE_CLUBDETIRO,
-  },
+  // {
+  //   id: 5,
+  //   title: "CLUB DE TIRO CONASEGUR",
+  //   description: "Página web enfocada en la difusión de la cultura y capacitación en manejo seguro de armas y actividades recreativas. Diseño atractivo y escalable.",
+  //   image: clubImg,
+  //   github: "https://github.com/Clover2103/conasegur",
+  //   site: import.meta.env.VITE_CLUBDETIRO,
+  // },
 ];
 
 const SeccionProjects = () => {
