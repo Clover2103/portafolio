@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import logoUT from "../../assets/home/educacion/logo-ut.png";
-import logoPlatzi from "../../assets/home/educacion/logo-platzi.png";
+import logoUT from "../../assets/home/educacion/logo-ut.svg";
+import logoPlatzi from "../../assets/home/educacion/logo-platzi.svg";
 import doc1 from "../../assets/home/educacion/documents/3. diploma-python.pdf";
 import doc2 from "../../assets/home/educacion/documents/3. diploma-python.pdf";
 import doc3 from "../../assets/home/educacion/documents/3. diploma-python.pdf";

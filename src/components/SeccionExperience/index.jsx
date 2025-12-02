@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 // importa tus imágenes igual que antes...
 import imgFront1 from "../../assets/home/skills/frontend/logo-html.svg";
-import imgFront2 from "../../assets/home/skills/frontend/logo-bootstrap.png";
+import imgFront2 from "../../assets/home/skills/frontend/logo-bootstrap.svg";
 import imgFront3 from "../../assets/home/skills/frontend/logo-figma.svg";
 import imgFront4 from "../../assets/home/skills/frontend/logo-css.svg";
-import imgFront5 from "../../assets/home/skills/frontend/logo-javascript.png";
+import imgFront5 from "../../assets/home/skills/frontend/logo-javascript.svg";
 import imgFront6 from "../../assets/home/skills/frontend/logo-react.svg";
 import imgFront7 from "../../assets/home/skills/frontend/logo-tailwindcss.svg";
 import imgBack1 from "../../assets/home/skills/backend/logo-laravel.svg";
@@ -13,10 +13,10 @@ import imgBack2 from "../../assets/home/skills/backend/logo-php.svg";
 import imgBack3 from "../../assets/home/skills/backend/logo-python.svg";
 import imgData1 from "../../assets/home/skills/bases-datos/logo-mysql.svg";
 import imgData2 from "../../assets/home/skills/bases-datos/logo-postgreSQL.svg";
-import imgDevops1 from "../../assets/home/skills/devops/logo-git.png";
+import imgDevops1 from "../../assets/home/skills/devops/logo-git.svg";
 import imgDevops2 from "../../assets/home/skills/devops/logo-github.svg";
-import imgDevops3 from "../../assets/home/skills/devops/logo-wordpress.png";
-import imgDevops4 from "../../assets/home/skills/devops/logo-nodejs.png";
+import imgDevops3 from "../../assets/home/skills/devops/logo-wordpress.svg";
+import imgDevops4 from "../../assets/home/skills/devops/logo-nodejs.svg";
 import imgDevops5 from "../../assets/home/skills/devops/logo-npm.svg";
 import imgDevops6 from "../../assets/home/skills/devops/logo-composer.svg";
 
